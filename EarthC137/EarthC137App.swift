@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct EarthC137App: App {
+    
+   
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
+            
+            
             ContentView()
+                .preferredColorScheme(.dark)
+            
+            
+         
         }
     }
 }

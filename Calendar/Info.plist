@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.widgetkit-extension</string>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>UnifrakturMaguntia-Regular.ttf</string>
+		<string>Teko-SemiBold.ttf</string>
+		<string>Cinzel-SemiBold.ttf</string>
+		<string>PlaywriteDESAS-Regular.ttf</string>
+		<string>Strang-Regular.ttf</string>
+		<string>RockSalt-Regular.ttf</string>
+		<string>BebasNeue-Regular.ttf</string>
+		<string>Philosopher-Bold.ttf</string>
+		<string>Fraunces-SemiBold.ttf</string>
+		<string>Kablammo-Regular.ttf</string>
+		<string>RubikWetPaint-Regular.ttf</string>
+		<string>AmaticSC-Bold.ttf</string>
+		<string>Cardo-Bold.ttf</string>
+		<string>RougeScript-Regular.ttf</string>
+		<string>Audiowide-Regular.ttf</string>
+		<string>Tourney-ExtraBold.ttf</string>
+	</array>
+</dict>
+</plist>
