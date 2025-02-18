@@ -13,7 +13,7 @@ struct instrucView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Cómo agregar widgets de C137 en la pantalla de bloqueo")
+                Text("🤔 Cómo agregar widgets de C137 en la pantalla de bloqueo?")
                     .font(.largeTitle)
                     .bold()
                     .padding()
@@ -84,7 +84,7 @@ struct instrucView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Instrucciones")
+            .navigationTitle("💡Instrucciones")
         }
     }
 }

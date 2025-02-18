@@ -9,6 +9,7 @@ struct ContentView: View {
     @State private var isConnected = true
     @State private var showingTermsAlert = false
     @State private var showingTermsSheet = false // Nuevo estado para mostrar el Sheet
+    @State private var showingInstruView = false // Nuevo estado para mostrar el modal de InstruView
     
     //private let interstitialAdUnitID = "ca-app-pub-3940256099942544/4411468910"
     private let monitor = NWPathMonitor()
@@ -39,6 +40,13 @@ struct ContentView: View {
 
             } else {
                 // Contenido principal
+                ZStack {
+                                    // Fondo semi-transparente para la barra de pestañas
+                                    VisualEffectBlur(blurStyle: .systemUltraThinMaterial)
+                                        .frame(height: 50) // Altura de la barra de pestañas
+                                        .edgesIgnoringSafeArea(.bottom) // Extender hasta el borde inferior
+                                    
+                                    // TabView
                 TabView(selection: $selectedTab) {
                     ClockView()
                         .tabItem {
@@ -60,22 +68,16 @@ struct ContentView: View {
 
                     SettingsView()
                         .tabItem {
-                            Label("Settings", systemImage: "gear")
+                            Label("Info", systemImage: "info.square.fill")
                         }
                         .tag(3)
                 }
                 .accentColor(.green)
-                .background(
-                           // Aplicar el efecto de desenfoque transparente a la barra inferior
-                           VStack {
-                               Spacer()
-                               VisualEffectBlur(blurStyle: .systemUltraThinMaterial) // Efecto Blur de Apple
-                                   .frame(height: 50)
-                                   .edgesIgnoringSafeArea(.bottom) // Para que cubra toda la parte inferior
-                           }
-                       )
+              
             }
         }
+        }
+            
         .onAppear {
           //  interstitial = Interstitial(adUnitID: interstitialAdUnitID)
             startNetworkMonitor() // Inicia el monitor de red
@@ -89,6 +91,7 @@ struct ContentView: View {
                     // Guarda que el usuario ha aceptado los términos
                     UserDefaults.standard.set(true, forKey: "hasAcceptedTerms")
                     showingTermsAlert = false // Cierra la alerta
+                    showingInstruView = true // Muestra el modal de InstruView
                 }),
                 
                 secondaryButton: .default(Text("Leer Términos"), action: {
@@ -102,6 +105,9 @@ struct ContentView: View {
         }) {
             TermsOfServiceView()
         }
+        .sheet(isPresented: $showingInstruView) {
+                    InstruView() // Muestra la vista InstruView en un modal
+                }
     }
     
     private func startNetworkMonitor() {
@@ -122,15 +128,15 @@ struct ContentView: View {
     }
 
     struct VisualEffectBlur: UIViewRepresentable {
-        var blurStyle: UIBlurEffect.Style
+           var blurStyle: UIBlurEffect.Style
 
-        func makeUIView(context: Context) -> UIVisualEffectView {
-            let view = UIVisualEffectView(effect: UIBlurEffect(style: blurStyle))
-            return view
-        }
+           func makeUIView(context: Context) -> UIVisualEffectView {
+               let view = UIVisualEffectView(effect: UIBlurEffect(style: blurStyle))
+               return view
+           }
 
-        func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
-            uiView.effect = UIBlurEffect(style: blurStyle)
-        }
-    }
+           func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+               uiView.effect = UIBlurEffect(style: blurStyle)
+           }
+       }
 }

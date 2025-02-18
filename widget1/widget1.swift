@@ -49,7 +49,7 @@ struct widget1EntryView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(-17.0)
                     .scaledToFill() // Asegura que la imagen cubra todo el fondo
-                    .ignoresSafeArea() // Ignora las áreas seguras para cubrir completamente el widget
+                    .ignoresSafeArea()
                 
                 switch entry.imageName {
                 case "command one":
@@ -59,7 +59,7 @@ struct widget1EntryView: View {
                         .foregroundColor(.black)
                         .padding(.top, -44)
                         .padding(.leading,6)
-                        .shadow(radius: 10)
+                        .shadow(radius: 10) // Evita el tinte
                     
                 case "hi hi":
                     HiHiView(date: entry.date)
@@ -101,8 +101,11 @@ struct widget1EntryView: View {
                 default:
                     EmptyView()
                 }
+                     // También aplicar en el fondo del contenedor
+                 
             }
             .containerBackground(for: .widget) { Color.clear }
+            .widgetAccentable(false)
         } else {
             ZStack {
                 Image(entry.imageName)
@@ -164,6 +167,7 @@ struct widget1EntryView: View {
                 }
             }
            }
+           
         }
         
     }

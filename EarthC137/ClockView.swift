@@ -7,7 +7,7 @@ struct ClockView: View {
     @State private var searchText = ""
     @State private var showAlert = false
     @State private var showDescriptionAlert = false // Nueva alerta para la descripción
-    @State private var selectedImageName = ""
+    @State private var selectedImageName = UserDefaults(suiteName: "group.artemis.EarthC137.widget1")?.string(forKey: "selectedImage") ?? ""
     @State private var loadingButtons: [String: Bool] = [:]
     @State private var showConfirmationMessage = false
     @State private var interstitial: Interstitial?
@@ -52,66 +52,73 @@ struct ClockView: View {
         VStack {
             // Título estilo iOS
             HStack {
-                            
- 
-                           
+                Image("c137trades")
+                    .resizable()
+                    .frame(width: 54, height: 54) // Ajusta el tamaño según sea necesario
+                    .padding(.leading,3)
+
+                Spacer() // Empuja los elementos a los extremos
+
+                // Input de búsqueda con íconos
                 HStack {
-                                   Image("c137trades")
-                                       .resizable()
-                                       .frame(width: 54, height: 54) // Ajusta el tamaño según sea necesario
-                                      // .padding(.top)
-                                       .padding(.leading,-29)
-                               }
-                               .frame(width: 10)
-            
-            // Input de búsqueda con íconos
-            HStack {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.gray)
-                    .padding(.leading, 8)
-                
-                TextField("Buscar", text: $searchText)
-                    .padding(.vertical, 10)
-                    .padding(.leading, 5)
-                
-                if !searchText.isEmpty {
-                    Button(action: {
-                        searchText = ""
-                  //      AnalyticsManager.shared.logButtonPress(buttonName: "clear_search")
-                    }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.gray)
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                        .padding(.leading, 8)
+                    
+                    TextField("Buscar nombre", text: $searchText)
+                        .padding(.vertical, 10)
+                        .padding(.leading, 5)
+                        .submitLabel(.done)
+                    
+                    if !searchText.isEmpty {
+                        Button(action: {
+                            searchText = ""
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                        }
+                        .padding(.trailing, 8)
                     }
-                    .padding(.trailing, 8)
                 }
+                .frame(width: 295, height: 40)
+                .background(RoundedRectangle(cornerRadius: 20).fill(Color(.systemGray6)))
+                .padding(.trailing, 10)
             }
-            .frame(width: 250.0, height: 40.0)
-            .background(RoundedRectangle(cornerRadius: 20).fill(Color(.systemGray6)))
-            .padding(.horizontal, 29.0)
-            .padding(.trailing,-56)
+            .padding(.horizontal, 16) // Espacio en los costados
+
             
-            }
-            
-            
-            ScrollView {
-                Divider()
-                    .frame(height: 1) // Ajusta el grosor de la línea
-                    .background(Color.gris1) // Color de la línea
-                    .padding(.horizontal, 29.0)
-                    .padding(.top,3)
-                VStack(alignment: .leading, spacing: 8) { // VStack para alineación vertical
+            HStack {
+                VStack(alignment: .leading) { // Asegura que los elementos dentro estén alineados a la izquierda
                     Text("Reloj")
                         .foregroundColor(.white)
                         .font(.title2)
                         .fontWeight(.bold)
-                      //  .padding(.leading, 16) // Ajusta el espacio según necesites
+
+                    Image(selectedImageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 60, height: 60)
+                        .cornerRadius(5)
+                        .padding(3)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 9)
+                                .stroke(Color.gray, lineWidth: 2)
+                        )
+                }
+                .padding(.leading, 14)
+                
+                
+                Spacer() // Empuja el texto a la derecha
+
+                VStack(alignment: .leading, spacing: 8) { // VStack para alineación vertical
+                    
                     
                     // Botón de Instrucciones
                     Button(action: {
                         showInstruModal = true
                     }) {
                         Text("💡¿Instrucciones? toca aqui")
-                            .font(.headline)
+                            .font(.subheadline)
                             .foregroundColor(.blue)
                     }
                     .sheet(isPresented: $showInstruModal) {
@@ -119,14 +126,25 @@ struct ClockView: View {
                     }
                     Text("✅ Nuevo! Toca el nombre del widget para ver su descripción.")
                         .foregroundColor(.white)
-                        .font(.headline)
-                        .fontWeight(.bold)
+                        .font(.subheadline)
                         .padding(.horizontal,22)
                         .padding(.leading, -24)
                     
                 }
                 .padding(.leading, 20) // Padding general para centrar el contenido
                 .padding(.top, 10) // Espacio superior opcional
+            }
+            .padding(.horizontal, 35) // Espaciado en los costados
+
+            
+            
+            ScrollView {
+                Divider()
+                    .frame(height: 1) // Ajusta el grosor de la línea
+                    .background(Color.gris1) // Color de la línea
+                    .padding(.horizontal, 1)
+                    .padding(.top,3)
+             
             
                 
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
@@ -166,6 +184,7 @@ struct ClockView: View {
                                 title: Text("Confirmación"),
                                 message: Text("¿Quieres transformar a \(selectedImageName)? aparecerá un anuncio para mantener la app gratuita"),
                                 primaryButton: .default(Text("Transformar")) {
+                                   
                                     interstitial?.didDismissAd = {
                                         selectImage(selectedImageName)
                                     }

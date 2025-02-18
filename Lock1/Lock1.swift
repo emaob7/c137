@@ -84,7 +84,7 @@ struct lock1Widget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             lock1EntryView(entry: entry)
         }
-        .configurationDisplayName("Pin #1")
+        .configurationDisplayName("Pin 1")
         .description("Toca y elige el tema que más te guste en la sección Pins")
         .supportedFamilies([.accessoryCircular])
     }

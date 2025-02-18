@@ -12,7 +12,9 @@ import SwiftUI
 
 struct widget1Bundle: WidgetBundle {
     var body: some Widget {
-        ImageSwitcherWidget() // Tu widget principal
+        ImageSwitcherWidget()
+            
+        // Tu widget principal
       // widget1LiveActivity()
     }
 }

@@ -84,7 +84,9 @@ struct CalendarWEntryView: View {
                     EmptyView()
                 }
             }
-            .containerBackground(for: .widget) { Color.clear }
+            .containerBackground(for: .widget) { Color.black }
+            .colorScheme(.dark) // Forzar el modo oscuro
+            .widgetAccentable(false)
         } else {
             ZStack {
                 Image(entry.imageName)
@@ -124,6 +126,7 @@ struct CalendarWEntryView: View {
                     EmptyView()
                 }
             }
+            
            }
         }
         

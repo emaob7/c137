@@ -13,7 +13,7 @@ struct InstruView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Cómo agregar widgets de C137 a la pantalla")
+                Text("🤔 Cómo agregar widgets de C137 a la pantalla?")
                     .font(.largeTitle)
                     .bold()
                     .padding()
@@ -76,7 +76,7 @@ struct InstruView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Instrucciones")
+            .navigationTitle("💡Instrucciones")
         }
     }
 }
@@ -113,8 +113,4 @@ struct StepView: View {
     }
 }
 
-struct InstruView_Previews: PreviewProvider {
-    static var previews: some View {
-        InstruView()
-    }
-}
+

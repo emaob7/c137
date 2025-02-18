@@ -6,7 +6,9 @@
 	<array>
 		<string>group.artemis.EarthC137.Calendar</string>
 		<string>group.artemis.EarthC137.Lock</string>
+		<string>group.artemis.EarthC137.Lock2</string>
 		<string>group.artemis.EarthC137.widget1</string>
+		<string>group.artemis.EarthC137.Lock3</string>
 	</array>
 </dict>
 </plist>

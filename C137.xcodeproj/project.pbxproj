@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,14 @@
 		B509D4262CA61404005FB4D0 /* vanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B509D4252CA61404005FB4D0 /* vanView.swift */; };
 		B509D4282CA621D1005FB4D0 /* GFSDidot-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B509D4272CA621D1005FB4D0 /* GFSDidot-Regular.ttf */; };
 		B509D4292CA621D1005FB4D0 /* GFSDidot-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B509D4272CA621D1005FB4D0 /* GFSDidot-Regular.ttf */; };
+		B516987A2D64209000D8DC3A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5378E2A2C6D7563000B817C /* WidgetKit.framework */; };
+		B516987B2D64209000D8DC3A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5378E2C2C6D7563000B817C /* SwiftUI.framework */; };
+		B51698882D64209300D8DC3A /* Lock2Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B51698792D64209000D8DC3A /* Lock2Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B51698962D64212900D8DC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B545F2142C988AF3004DEBF9 /* Assets.xcassets */; };
+		B516989C2D64238300D8DC3A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5378E2A2C6D7563000B817C /* WidgetKit.framework */; };
+		B516989D2D64238300D8DC3A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5378E2C2C6D7563000B817C /* SwiftUI.framework */; };
+		B51698A82D64238600D8DC3A /* Lock3Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B516989B2D64238300D8DC3A /* Lock3Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B51698AD2D6423B500D8DC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B545F2142C988AF3004DEBF9 /* Assets.xcassets */; };
 		B51A7B342CB43D21000ACA0E /* BadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A7B332CB43D0D000ACA0E /* BadView.swift */; };
 		B51A7B352CB440DA000ACA0E /* Fraunces-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B555D2662C8CECDA00A5F6DE /* Fraunces-SemiBold.ttf */; };
 		B51A7B372CB47873000ACA0E /* AtributionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A7B362CB47869000ACA0E /* AtributionsView.swift */; };
@@ -133,6 +141,20 @@
 			remoteGlobalIDString = B5065EC42C9C6DDB009BE173;
 			remoteInfo = CalendarExtension;
 		};
+		B51698862D64209300D8DC3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5378E0B2C6D751B000B817C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B51698782D64209000D8DC3A;
+			remoteInfo = Lock2Extension;
+		};
+		B51698A62D64238600D8DC3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5378E0B2C6D751B000B817C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B516989A2D64238300D8DC3A;
+			remoteInfo = Lock3Extension;
+		};
 		B5378E3A2C6D7567000B817C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5378E0B2C6D751B000B817C /* Project object */;
@@ -156,8 +178,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				B51698882D64209300D8DC3A /* Lock2Extension.appex in Embed Foundation Extensions */,
 				B5378E3C2C6D7567000B817C /* widget1Extension.appex in Embed Foundation Extensions */,
 				B5065ED42C9C6DDF009BE173 /* CalendarExtension.appex in Embed Foundation Extensions */,
+				B51698A82D64238600D8DC3A /* Lock3Extension.appex in Embed Foundation Extensions */,
 				B545F2192C988AF3004DEBF9 /* Lock1Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -180,6 +204,10 @@
 		B5065EE62C9CB520009BE173 /* CincelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CincelView.swift; sourceTree = "<group>"; };
 		B509D4252CA61404005FB4D0 /* vanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vanView.swift; sourceTree = "<group>"; };
 		B509D4272CA621D1005FB4D0 /* GFSDidot-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GFSDidot-Regular.ttf"; sourceTree = "<group>"; };
+		B51698792D64209000D8DC3A /* Lock2Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Lock2Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B51698952D6420AF00D8DC3A /* Lock2Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lock2Extension.entitlements; sourceTree = "<group>"; };
+		B516989B2D64238300D8DC3A /* Lock3Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Lock3Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B51698B02D64255400D8DC3A /* Lock3Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lock3Extension.entitlements; sourceTree = "<group>"; };
 		B51A7B332CB43D0D000ACA0E /* BadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadView.swift; sourceTree = "<group>"; };
 		B51A7B362CB47869000ACA0E /* AtributionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributionsView.swift; sourceTree = "<group>"; };
 		B51BC8362CC6B6ED0046C4BD /* designView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designView.swift; sourceTree = "<group>"; };
@@ -271,6 +299,28 @@
 		B5FE45AA2C855AEF00C6C158 /* PirataOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PirataOne-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B51698892D64209300D8DC3A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B51698782D64209000D8DC3A /* Lock2Extension */;
+		};
+		B51698A92D64238600D8DC3A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B516989A2D64238300D8DC3A /* Lock3Extension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B516987C2D64209000D8DC3A /* Lock2 */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (B51698892D64209300D8DC3A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Lock2; sourceTree = "<group>"; };
+		B516989E2D64238300D8DC3A /* Lock3 */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (B51698A92D64238600D8DC3A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Lock3; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		B5065EC22C9C6DDB009BE173 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -278,6 +328,24 @@
 			files = (
 				B5065EC72C9C6DDC009BE173 /* SwiftUI.framework in Frameworks */,
 				B5065EC62C9C6DDC009BE173 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B51698762D64209000D8DC3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B516987B2D64209000D8DC3A /* SwiftUI.framework in Frameworks */,
+				B516987A2D64209000D8DC3A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B51698982D64238300D8DC3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B516989D2D64238300D8DC3A /* SwiftUI.framework in Frameworks */,
+				B516989C2D64238300D8DC3A /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +413,16 @@
 		B5378E0A2C6D751B000B817C = {
 			isa = PBXGroup;
 			children = (
+				B51698B02D64255400D8DC3A /* Lock3Extension.entitlements */,
+				B51698952D6420AF00D8DC3A /* Lock2Extension.entitlements */,
 				B5065ED82C9C78F6009BE173 /* CalendarExtension.entitlements */,
 				B5378E422C6D7774000B817C /* widget1Extension.entitlements */,
 				B5378E152C6D751C000B817C /* EarthC137 */,
 				B5378E2E2C6D7563000B817C /* widget1 */,
 				B545F20D2C988AF0004DEBF9 /* Lock1 */,
 				B5065EC82C9C6DDC009BE173 /* Calendar */,
+				B516987C2D64209000D8DC3A /* Lock2 */,
+				B516989E2D64238300D8DC3A /* Lock3 */,
 				B5378E292C6D7563000B817C /* Frameworks */,
 				B5378E142C6D751C000B817C /* Products */,
 			);
@@ -363,6 +435,8 @@
 				B5378E282C6D7563000B817C /* widget1Extension.appex */,
 				B545F20A2C988AEF004DEBF9 /* Lock1Extension.appex */,
 				B5065EC52C9C6DDB009BE173 /* CalendarExtension.appex */,
+				B51698792D64209000D8DC3A /* Lock2Extension.appex */,
+				B516989B2D64238300D8DC3A /* Lock3Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -543,6 +617,50 @@
 			productReference = B5065EC52C9C6DDB009BE173 /* CalendarExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		B51698782D64209000D8DC3A /* Lock2Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B516988A2D64209300D8DC3A /* Build configuration list for PBXNativeTarget "Lock2Extension" */;
+			buildPhases = (
+				B51698752D64209000D8DC3A /* Sources */,
+				B51698762D64209000D8DC3A /* Frameworks */,
+				B51698772D64209000D8DC3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B516987C2D64209000D8DC3A /* Lock2 */,
+			);
+			name = Lock2Extension;
+			packageProductDependencies = (
+			);
+			productName = Lock2Extension;
+			productReference = B51698792D64209000D8DC3A /* Lock2Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B516989A2D64238300D8DC3A /* Lock3Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B51698AA2D64238600D8DC3A /* Build configuration list for PBXNativeTarget "Lock3Extension" */;
+			buildPhases = (
+				B51698972D64238300D8DC3A /* Sources */,
+				B51698982D64238300D8DC3A /* Frameworks */,
+				B51698992D64238300D8DC3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B516989E2D64238300D8DC3A /* Lock3 */,
+			);
+			name = Lock3Extension;
+			packageProductDependencies = (
+			);
+			productName = Lock3Extension;
+			productReference = B516989B2D64238300D8DC3A /* Lock3Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B5378E122C6D751C000B817C /* C137 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5378E212C6D751E000B817C /* Build configuration list for PBXNativeTarget "C137" */;
@@ -558,6 +676,8 @@
 				B5378E3B2C6D7567000B817C /* PBXTargetDependency */,
 				B545F2182C988AF3004DEBF9 /* PBXTargetDependency */,
 				B5065ED32C9C6DDF009BE173 /* PBXTargetDependency */,
+				B51698872D64209300D8DC3A /* PBXTargetDependency */,
+				B51698A72D64238600D8DC3A /* PBXTargetDependency */,
 			);
 			name = C137;
 			packageProductDependencies = (
@@ -608,11 +728,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					B5065EC42C9C6DDB009BE173 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					B51698782D64209000D8DC3A = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					B516989A2D64238300D8DC3A = {
+						CreatedOnToolsVersion = 16.1;
 					};
 					B5378E122C6D751C000B817C = {
 						CreatedOnToolsVersion = 15.4;
@@ -646,6 +772,8 @@
 				B5378E272C6D7563000B817C /* widget1Extension */,
 				B545F2092C988AEF004DEBF9 /* Lock1Extension */,
 				B5065EC42C9C6DDB009BE173 /* CalendarExtension */,
+				B51698782D64209000D8DC3A /* Lock2Extension */,
+				B516989A2D64238300D8DC3A /* Lock3Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -675,6 +803,22 @@
 				B576F5212C9E022B0007925A /* Strang-Regular.ttf in Resources */,
 				B54B4BFE2CECE987004A359D /* HomemadeApple-Regular.ttf in Resources */,
 				B5065EE52C9C9299009BE173 /* UnifrakturMaguntia-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B51698772D64209000D8DC3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51698962D64212900D8DC3A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B51698992D64238300D8DC3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51698AD2D6423B500D8DC3A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +901,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B51698752D64209000D8DC3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B51698972D64238300D8DC3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5378E0F2C6D751C000B817C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -824,6 +982,16 @@
 			target = B5065EC42C9C6DDB009BE173 /* CalendarExtension */;
 			targetProxy = B5065ED22C9C6DDF009BE173 /* PBXContainerItemProxy */;
 		};
+		B51698872D64209300D8DC3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B51698782D64209000D8DC3A /* Lock2Extension */;
+			targetProxy = B51698862D64209300D8DC3A /* PBXContainerItemProxy */;
+		};
+		B51698A72D64238600D8DC3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B516989A2D64238300D8DC3A /* Lock3Extension */;
+			targetProxy = B51698A62D64238600D8DC3A /* PBXContainerItemProxy */;
+		};
 		B5378E3B2C6D7567000B817C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B5378E272C6D7563000B817C /* widget1Extension */;
@@ -887,6 +1055,122 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.artemis.EarthC137.Calendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B516988B2D64209300D8DC3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Lock2Extension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T36FC9H864;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lock2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Lock2;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artemis.EarthC137.Lock2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B516988C2D64209300D8DC3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Lock2Extension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T36FC9H864;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lock2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Lock2;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artemis.EarthC137.Lock2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B51698AB2D64238600D8DC3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Lock3Extension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T36FC9H864;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lock3/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Lock3;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artemis.EarthC137.Lock3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B51698AC2D64238600D8DC3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Lock3Extension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T36FC9H864;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lock3/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Lock3;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artemis.EarthC137.Lock3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1035,7 +1319,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1071,7 +1355,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1214,6 +1498,24 @@
 			buildConfigurations = (
 				B5065ED52C9C6DDF009BE173 /* Debug */,
 				B5065ED62C9C6DDF009BE173 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B516988A2D64209300D8DC3A /* Build configuration list for PBXNativeTarget "Lock2Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B516988B2D64209300D8DC3A /* Debug */,
+				B516988C2D64209300D8DC3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B51698AA2D64238600D8DC3A /* Build configuration list for PBXNativeTarget "Lock3Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B51698AB2D64238600D8DC3A /* Debug */,
+				B51698AC2D64238600D8DC3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -3,14 +3,14 @@ import SwiftUI
 
 // Proveedor de datos para el widget
 struct Provider: TimelineProvider {
-    private let userDefaults = UserDefaults(suiteName: "group.artemis.EarthC137.Lock2")
+    private let userDefaults = UserDefaults(suiteName: "group.artemis.EarthC137.Lock3")
 
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), imageName: "love")
+        SimpleEntry(date: Date(), imageName: "love dogs")
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let imageName = userDefaults?.string(forKey: "selectedImage") ?? "love"
+        let imageName = userDefaults?.string(forKey: "selectedImage") ?? "love dogs"
         print("getSnapshot imageName: \(imageName)")  // Añade un print para ver qué valor se está leyendo
         let entry = SimpleEntry(date: Date(), imageName: imageName)
         completion(entry)
@@ -21,7 +21,7 @@ struct Provider: TimelineProvider {
         let currentDate = Date()
         for minuteOffset in 0..<60 {
             let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
-            let imageName = userDefaults?.string(forKey: "selectedImage") ?? "love"
+            let imageName = userDefaults?.string(forKey: "selectedImage") ?? "love dogs"
             //print("getTimeline imageName: \(imageName)")  // Añade un print aquí también
             let entry = SimpleEntry(date: entryDate, imageName: imageName)
             entries.append(entry)
@@ -77,14 +77,14 @@ struct lock1EntryView: View {
 
 
 @main
-struct lock2Widget: Widget {
+struct lock3Widget: Widget {
     private let kind: String = "ImageSwitcherWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             lock1EntryView(entry: entry)
         }
-        .configurationDisplayName("Pin 2")
+        .configurationDisplayName("Pin 3")
         .description("Toca y elige el tema que más te guste en la sección Pins")
         .supportedFamilies([.accessoryCircular])
     }
