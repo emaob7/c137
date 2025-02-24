@@ -2,6 +2,7 @@ import SwiftUI
 import Network
 import WidgetKit
 import GoogleMobileAds
+import UserNotifications
 
 struct ContentView: View {
    // @State private var interstitial: Interstitial?
@@ -82,6 +83,9 @@ struct ContentView: View {
           //  interstitial = Interstitial(adUnitID: interstitialAdUnitID)
             startNetworkMonitor() // Inicia el monitor de red
             checkFirstLaunch() // Comprueba si es la primera vez que se usa la app
+            requestNotificationPermission() // Solicitar permiso para notificaciones
+            UserDefaults.standard.set(true, forKey: "shouldShowUpdateNotification")
+            checkForAppUpdate() // Verificar si hay una actualización
         }
         .alert(isPresented: $showingTermsAlert) {
             Alert(
@@ -109,6 +113,55 @@ struct ContentView: View {
                     InstruView() // Muestra la vista InstruView en un modal
                 }
     }
+    
+    
+    private func requestNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
+            if granted {
+                print("Permiso para notificaciones concedido")
+            } else if let error = error {
+                print("Error al solicitar permiso: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    private func checkForAppUpdate() {
+         let userDefaults = UserDefaults.standard
+         let shouldShowNotification = userDefaults.bool(forKey: "shouldShowUpdateNotification")
+         
+         if shouldShowNotification {
+             // Mostrar la notificación
+             sendUpdateNotification()
+             
+             // Cambiar la variable a false para que no se muestre más
+             userDefaults.set(false, forKey: "shouldShowUpdateNotification")
+         }
+     }
+
+     private func sendUpdateNotification() {
+         let content = UNMutableNotificationContent()
+         content.title = "¡Nueva Actualizacion!"
+         content.body = "Ahora puedes agregar hasta 3 pines a la pantalla de bloqueo."
+         content.sound = .default
+
+         // Configurar el trigger para que la notificación se muestre inmediatamente
+         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+
+         // Crear la solicitud de notificación
+         let request = UNNotificationRequest(identifier: "appUpdateNotification", content: content, trigger: trigger)
+
+         // Agregar la solicitud al centro de notificaciones
+         UNUserNotificationCenter.current().add(request) { error in
+             if let error = error {
+                 print("Error al programar la notificación: \(error.localizedDescription)")
+             } else {
+                 print("Notificación programada correctamente")
+             }
+         }
+     }
+    
+    
+    
     
     private func startNetworkMonitor() {
         monitor.pathUpdateHandler = { path in

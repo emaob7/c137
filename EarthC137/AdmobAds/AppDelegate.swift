@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Iniciar Google Mobile Ads
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+      //  UserDefaults.standard.set(true, forKey: "shouldShowUpdateNotification")
         
         
    

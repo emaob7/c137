@@ -14,14 +14,15 @@ struct PinsView: View {
     @State private var interstitial: Interstitial?
     @State private var showInstruModal = false
     
+    
     // UserDefaults separados para cada grupo
     private let userDefaultsGroup1 = UserDefaults(suiteName: "group.artemis.EarthC137.Lock")
     private let userDefaultsGroup2 = UserDefaults(suiteName: "group.artemis.EarthC137.Lock2")
     private let userDefaultsGroup3 = UserDefaults(suiteName: "group.artemis.EarthC137.Lock3")
     
     private let images = ["dont touch","kanji turtle","hand bones","im doctor","im gammer","love cats","love dogs","atom","enso","robot","joystick","do better","handball","a football","football","rugby","tennis","love","one star", "no today", "game over","basketball","moon","psychology","soccer field","strengthtraining","volleyball 2","volleyball"]
-   // private let interstitialAdUnitID = "ca-app-pub-4622872693950947/9485573048"
-    private let interstitialAdUnitID = "ca-app-pub-3940256099942544/4411468910"
+    private let interstitialAdUnitID = "ca-app-pub-4622872693950947/9485573048"
+    //private let interstitialAdUnitID = "ca-app-pub-3940256099942544/4411468910"
     
     var body: some View {
         NavigationView {
@@ -103,6 +104,7 @@ struct PinsView: View {
                         }
                     }
                     .padding(.horizontal, 40)
+                    .padding(.top,10)
                 }
                 
                 // Grid de imágenes

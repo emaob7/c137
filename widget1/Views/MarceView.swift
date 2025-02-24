@@ -20,18 +20,18 @@ struct MarceView: View {
                 
                 HStack (spacing: 3)  {
                     Text(date.hour2())
-                        .font(Font.custom("HomemadeApple-Regular", size: 48))
+                        .font(Font.custom("HomemadeApple-Regular", size: 45))
                         .foregroundColor(.black)
                         .shadow(radius: 10)
                         
                     Text(":")
-                        .font(Font.custom("HomemadeApple-Regular", size: 48))
+                        .font(Font.custom("HomemadeApple-Regular", size: 45))
                         .foregroundColor(.black)
                         .shadow(radius: 10)
                         
                   
                     Text(date.minute())
-                        .font(Font.custom("HomemadeApple-Regular", size: 48))
+                        .font(Font.custom("HomemadeApple-Regular", size: 45))
                         .foregroundColor(.black)
                         .shadow(radius: 10)
 

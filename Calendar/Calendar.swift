@@ -91,8 +91,7 @@ struct CalendarWEntryView: View {
             ZStack {
                 Image(entry.imageName)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(-17.0)
+                    .aspectRatio(contentMode: .fill) // Cambia a .fill
                     .scaledToFill() // Asegura que la imagen cubra todo el fondo
                     .ignoresSafeArea() // Ignora las áreas seguras para cubrir completamente el widget
                 

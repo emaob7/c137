@@ -53,6 +53,9 @@
 		B5378E342C6D7563000B817C /* widget1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5378E332C6D7563000B817C /* widget1.swift */; };
 		B5378E382C6D7567000B817C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5378E372C6D7567000B817C /* Assets.xcassets */; };
 		B5378E3C2C6D7567000B817C /* widget1Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5378E282C6D7563000B817C /* widget1Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B53AB8032D6BC87D0087299E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB8022D6BC87A0087299E /* SearchBarView.swift */; };
+		B53AB8052D6BC8C10087299E /* ClockSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB8042D6BC8BF0087299E /* ClockSectionView.swift */; };
+		B53AB8072D6BC8E30087299E /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AB8062D6BC8E00087299E /* ImageGridView.swift */; };
 		B53DE09B2CE2896D000B5D4C /* orangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53DE09A2CE28963000B5D4C /* orangeView.swift */; };
 		B53DE09D2CE28CD6000B5D4C /* SourGummy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B53DE09C2CE28CD6000B5D4C /* SourGummy-Bold.ttf */; };
 		B53DE09E2CE28CD6000B5D4C /* SourGummy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B53DE09C2CE28CD6000B5D4C /* SourGummy-Bold.ttf */; };
@@ -109,6 +112,11 @@
 		B5A45B212C73992D005B0B38 /* OpenAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A45B202C73992D005B0B38 /* OpenAd.swift */; };
 		B5A45B232C739DBB005B0B38 /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A45B222C739DBB005B0B38 /* InterstitialAd.swift */; };
 		B5A6388A2C9651E800A58476 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5A638892C9651E800A58476 /* BebasNeue-Regular.ttf */; };
+		B5A962852D6CAD5D0065E63D /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A962842D6CAD540065E63D /* ImageCellView.swift */; };
+		B5A962872D6CB1310065E63D /* ConfirmationMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A962862D6CB1240065E63D /* ConfirmationMessageView.swift */; };
+		B5A962892D6CC4F40065E63D /* DateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A962882D6CC4EA0065E63D /* DateSectionView.swift */; };
+		B5A9628B2D6CC9AD0065E63D /* ImageGridViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9628A2D6CC99F0065E63D /* ImageGridViewC.swift */; };
+		B5A9628D2D6CC9DD0065E63D /* ImageCellViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9628C2D6CC9CF0065E63D /* ImageCellViewC.swift */; };
 		B5AB5FB02C813E3B00F75A1C /* EveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB5FAF2C813E3B00F75A1C /* EveryView.swift */; };
 		B5AB5FB22C81463B00F75A1C /* DSEG7ModernMini-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5AB5FB12C81463B00F75A1C /* DSEG7ModernMini-Italic.ttf */; };
 		B5ADD9CA2C7E4F95000A8E90 /* Strang-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5ADD9C92C7E4F95000A8E90 /* Strang-Regular.ttf */; };
@@ -230,6 +238,9 @@
 		B5378E392C6D7567000B817C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5378E412C6D7626000B817C /* EarthC137.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EarthC137.entitlements; sourceTree = "<group>"; };
 		B5378E422C6D7774000B817C /* widget1Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget1Extension.entitlements; sourceTree = "<group>"; };
+		B53AB8022D6BC87A0087299E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		B53AB8042D6BC8BF0087299E /* ClockSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSectionView.swift; sourceTree = "<group>"; };
+		B53AB8062D6BC8E00087299E /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		B53DE09A2CE28963000B5D4C /* orangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orangeView.swift; sourceTree = "<group>"; };
 		B53DE09C2CE28CD6000B5D4C /* SourGummy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourGummy-Bold.ttf"; sourceTree = "<group>"; };
 		B53DE09F2CE2956F000B5D4C /* Cardo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cardo-Bold.ttf"; sourceTree = "<group>"; };
@@ -279,6 +290,11 @@
 		B5A45B202C73992D005B0B38 /* OpenAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAd.swift; sourceTree = "<group>"; };
 		B5A45B222C739DBB005B0B38 /* InterstitialAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAd.swift; sourceTree = "<group>"; };
 		B5A638892C9651E800A58476 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
+		B5A962842D6CAD540065E63D /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
+		B5A962862D6CB1240065E63D /* ConfirmationMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationMessageView.swift; sourceTree = "<group>"; };
+		B5A962882D6CC4EA0065E63D /* DateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionView.swift; sourceTree = "<group>"; };
+		B5A9628A2D6CC99F0065E63D /* ImageGridViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridViewC.swift; sourceTree = "<group>"; };
+		B5A9628C2D6CC9CF0065E63D /* ImageCellViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewC.swift; sourceTree = "<group>"; };
 		B5AB5FAF2C813E3B00F75A1C /* EveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryView.swift; sourceTree = "<group>"; };
 		B5AB5FB12C81463B00F75A1C /* DSEG7ModernMini-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG7ModernMini-Italic.ttf"; sourceTree = "<group>"; };
 		B5ADD9C92C7E4F95000A8E90 /* Strang-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Strang-Regular.ttf"; sourceTree = "<group>"; };
@@ -444,6 +460,7 @@
 		B5378E152C6D751C000B817C /* EarthC137 */ = {
 			isa = PBXGroup;
 			children = (
+				B53AB8012D6BC7DE0087299E /* Clock */,
 				B5906D7D2C93B68300360693 /* EarthC137Debug.entitlements */,
 				B59206082C764A1E0018909C /* Resources */,
 				B59206052C7648B60018909C /* Managers */,
@@ -495,6 +512,21 @@
 				B5378E392C6D7567000B817C /* Info.plist */,
 			);
 			path = widget1;
+			sourceTree = "<group>";
+		};
+		B53AB8012D6BC7DE0087299E /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				B53AB8022D6BC87A0087299E /* SearchBarView.swift */,
+				B53AB8042D6BC8BF0087299E /* ClockSectionView.swift */,
+				B5A962882D6CC4EA0065E63D /* DateSectionView.swift */,
+				B5A962862D6CB1240065E63D /* ConfirmationMessageView.swift */,
+				B53AB8062D6BC8E00087299E /* ImageGridView.swift */,
+				B5A9628A2D6CC99F0065E63D /* ImageGridViewC.swift */,
+				B5A962842D6CAD540065E63D /* ImageCellView.swift */,
+				B5A9628C2D6CC9CF0065E63D /* ImageCellViewC.swift */,
+			);
+			path = Clock;
 			sourceTree = "<group>";
 		};
 		B545F20D2C988AF0004DEBF9 /* Lock1 */ = {
@@ -919,21 +951,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A9628D2D6CC9DD0065E63D /* ImageCellViewC.swift in Sources */,
+				B5A962852D6CAD5D0065E63D /* ImageCellView.swift in Sources */,
 				B5933E032C73D2E100D0847B /* SettingsView.swift in Sources */,
 				B5906D7F2C93C48000360693 /* ClockView.swift in Sources */,
+				B5A9628B2D6CC9AD0065E63D /* ImageGridViewC.swift in Sources */,
 				B5A45B212C73992D005B0B38 /* OpenAd.swift in Sources */,
 				B5933DFD2C73AB0A00D0847B /* Rewarded_AD.swift in Sources */,
 				B545AE8E2C97837D003B4068 /* PinsView.swift in Sources */,
 				B5378E192C6D751C000B817C /* ContentView.swift in Sources */,
 				B545AE902C9783D3003B4068 /* CalendarView.swift in Sources */,
+				B53AB8052D6BC8C10087299E /* ClockSectionView.swift in Sources */,
 				B59206072C7648E90018909C /* AnalyticsManager.swift in Sources */,
 				B5A45B1D2C7394E7005B0B38 /* AppDelegate.swift in Sources */,
 				B5CBE9B12CA5BA36002B06A5 /* PrivacyPolicyView.swift in Sources */,
+				B53AB8072D6BC8E30087299E /* ImageGridView.swift in Sources */,
 				B5378E172C6D751C000B817C /* EarthC137App.swift in Sources */,
 				B5A45B232C739DBB005B0B38 /* InterstitialAd.swift in Sources */,
+				B5A962872D6CB1310065E63D /* ConfirmationMessageView.swift in Sources */,
 				B51A7B372CB47873000ACA0E /* AtributionsView.swift in Sources */,
 				B5CBE9AF2CA5B9EE002B06A5 /* TermsOfServiceView.swift in Sources */,
 				B59A3BDA2CED500B0006BA27 /* instruView.swift in Sources */,
+				B53AB8032D6BC87D0087299E /* SearchBarView.swift in Sources */,
+				B5A962892D6CC4F40065E63D /* DateSectionView.swift in Sources */,
 				B5A109542CED8F99006EB29A /* instrucView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1319,7 +1359,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1328,7 +1367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.2;
+				MARKETING_VERSION = 2.0.1;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.artemis.EarthC137;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1355,7 +1394,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1364,7 +1402,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.2;
+				MARKETING_VERSION = 2.0.1;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.artemis.EarthC137;
 				PRODUCT_NAME = "$(TARGET_NAME)";
