@@ -96,6 +96,9 @@
 		B582FAC72C92329E00CCF40D /* JamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582FAC62C92329E00CCF40D /* JamesView.swift */; };
 		B582FAC92C923BEC00CCF40D /* Audiowide-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B582FAC82C923BEC00CCF40D /* Audiowide-Regular.ttf */; };
 		B58428FF2C9D0B0A00360C40 /* Cinzel-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B58428FE2C9D0B0A00360C40 /* Cinzel-SemiBold.ttf */; };
+		B58B24E22D6D193A00CD63F4 /* GroupButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B24E12D6D193700CD63F4 /* GroupButtonsView.swift */; };
+		B58B24E42D6D19AF00CD63F4 /* ImageGridViewP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B24E32D6D197D00CD63F4 /* ImageGridViewP.swift */; };
+		B58B24E72D6D1CD300CD63F4 /* ImageCellViewP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58B24E62D6D1CC500CD63F4 /* ImageCellViewP.swift */; };
 		B58E99572CA4D0FC00B03CD3 /* windowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E99562CA4D0FC00B03CD3 /* windowsView.swift */; };
 		B5906D7F2C93C48000360693 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5906D7E2C93C48000360693 /* ClockView.swift */; };
 		B59206072C7648E90018909C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59206062C7648E90018909C /* AnalyticsManager.swift */; };
@@ -274,6 +277,9 @@
 		B582FAC62C92329E00CCF40D /* JamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamesView.swift; sourceTree = "<group>"; };
 		B582FAC82C923BEC00CCF40D /* Audiowide-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audiowide-Regular.ttf"; sourceTree = "<group>"; };
 		B58428FE2C9D0B0A00360C40 /* Cinzel-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-SemiBold.ttf"; sourceTree = "<group>"; };
+		B58B24E12D6D193700CD63F4 /* GroupButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupButtonsView.swift; sourceTree = "<group>"; };
+		B58B24E32D6D197D00CD63F4 /* ImageGridViewP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridViewP.swift; sourceTree = "<group>"; };
+		B58B24E62D6D1CC500CD63F4 /* ImageCellViewP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewP.swift; sourceTree = "<group>"; };
 		B58E99562CA4D0FC00B03CD3 /* windowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = windowsView.swift; sourceTree = "<group>"; };
 		B5906D7D2C93B68300360693 /* EarthC137Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EarthC137Debug.entitlements; sourceTree = "<group>"; };
 		B5906D7E2C93C48000360693 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
@@ -517,13 +523,16 @@
 		B53AB8012D6BC7DE0087299E /* Clock */ = {
 			isa = PBXGroup;
 			children = (
+				B58B24E32D6D197D00CD63F4 /* ImageGridViewP.swift */,
 				B53AB8022D6BC87A0087299E /* SearchBarView.swift */,
+				B58B24E12D6D193700CD63F4 /* GroupButtonsView.swift */,
 				B53AB8042D6BC8BF0087299E /* ClockSectionView.swift */,
 				B5A962882D6CC4EA0065E63D /* DateSectionView.swift */,
 				B5A962862D6CB1240065E63D /* ConfirmationMessageView.swift */,
 				B53AB8062D6BC8E00087299E /* ImageGridView.swift */,
 				B5A9628A2D6CC99F0065E63D /* ImageGridViewC.swift */,
 				B5A962842D6CAD540065E63D /* ImageCellView.swift */,
+				B58B24E62D6D1CC500CD63F4 /* ImageCellViewP.swift */,
 				B5A9628C2D6CC9CF0065E63D /* ImageCellViewC.swift */,
 			);
 			path = Clock;
@@ -974,7 +983,10 @@
 				B59A3BDA2CED500B0006BA27 /* instruView.swift in Sources */,
 				B53AB8032D6BC87D0087299E /* SearchBarView.swift in Sources */,
 				B5A962892D6CC4F40065E63D /* DateSectionView.swift in Sources */,
+				B58B24E72D6D1CD300CD63F4 /* ImageCellViewP.swift in Sources */,
 				B5A109542CED8F99006EB29A /* instrucView.swift in Sources */,
+				B58B24E22D6D193A00CD63F4 /* GroupButtonsView.swift in Sources */,
+				B58B24E42D6D19AF00CD63F4 /* ImageGridViewP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

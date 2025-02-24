@@ -6,42 +6,76 @@ struct SettingsView: View {
     @State private var showingPrivacyPolicy = false
     @State private var showingMailComposer = false
     @State private var showingAtribution = false
+    @State private var showLanguageAlert = false
+    @AppStorage("isEnglish", store: UserDefaults(suiteName: "group.artemis.EarthC137.isEnglish")) private var isEnglish: Bool = false
     
+
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             // Logo y Título
             HStack {
-                Spacer() // Añadido para centrar el contenido
-                Image("c137trades") // Reemplaza "appLogo" con el nombre de tu imagen de logo
+                Spacer()
+                Image("c137trades")
                     .resizable()
-                    .frame(width: 60, height: 60) // Ajusta el tamaño según sea necesario
+                    .frame(width: 60, height: 60)
                 Text("C137")
                     .font(.largeTitle)
                     .bold()
-                Spacer() // Añadido para centrar el contenido
+                Spacer()
             }
             .padding(.bottom, 10)
             
             // Descripción de la app
-            Text("Los widgets de reloj y fecha más cools, paródicos & aesthetics de este universo.")
+            Text(isEnglish ? "The coolest, most aesthetic and parodic clock and date widgets in this universe." : "Los widgets de reloj y fecha más cools, paródicos & aesthetics de este universo.")
                 .font(.body)
-                .multilineTextAlignment(.center) // Alinea el texto de descripción al centro
-                .padding(.horizontal, 30) // Margen lateral para que no quede muy ancho
-                .padding(.bottom, 30) // Espacio entre el título y la siguiente sección
-        
-            
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 30)
+                .padding(.bottom, 30)
+            // Sección de idioma
+                    Text(isEnglish ? "Language" : "Idioma")
+                        .font(.title2)
+                        .bold()
+                        .padding(.bottom, 10)
+                    
+                    HStack {
+                        
+                        
+                        // Botón de toggle para cambiar el idioma
+                        Button(action: {
+                            showLanguageAlert = true // Mostrar el Alert
+                        }) {
+                            Text(isEnglish ? "🌐 Español?" : "🌐 English?")
+                                .font(.body)
+                                .padding(10)
+                                .foregroundColor(.blue)
+                                .cornerRadius(20)
+                        }
+                        .alert(isPresented: $showLanguageAlert) { // Modificador para mostrar el Alert
+                            Alert(
+                                title: Text(isEnglish ? "¿Cambiar idioma?" : "Change language?"),
+                                message: Text(isEnglish ? "¿Quieres cambiar a Español 🇪🇸?" : "Do you want to switch to English 🇺🇸?"),
+                                primaryButton: .default(Text(isEnglish ? "Si" : "Yes")) {
+                                    isEnglish.toggle() // Cambiar el idioma
+                                },
+                                secondaryButton: .destructive(Text("No")) // No hacer nada
+                            )
+                        }
+                        
+                    }
+                    .padding(.bottom, 20)
+                    
             // Sección de encabezado "Contacto"
-            Text("Contacto")
+            Text(isEnglish ? "Contact" : "Contacto")
                 .font(.title2)
                 .bold()
                 .padding(.bottom, 10)
             
             HStack {
                 Text("✉️")
-                Button("Escríbenos") {
+                Button(isEnglish ? "Write to us" : "Escríbenos") {
                     sendEmail()
                 }
-                Spacer() // Alinea el botón a la izquierda
+                Spacer()
             }
             .padding(.bottom, 10)
             
@@ -57,7 +91,7 @@ struct SettingsView: View {
             
             // Botón para TikTok
             HStack {
-                Text("🎬") // Icono para TikTok
+                Text("🎬")
                 Button("TikTok") {
                     openTikTok()
                 }
@@ -66,7 +100,7 @@ struct SettingsView: View {
             .padding(.bottom, 10)
             
             // Sección de encabezado "Términos y Privacidad"
-            Text("Términos y Privacidad")
+            Text(isEnglish ? "Terms and Privacy" : "Términos y Privacidad")
                 .font(.title2)
                 .bold()
                 .padding(.top, 20)
@@ -74,7 +108,7 @@ struct SettingsView: View {
             
             HStack {
                 Text("📄")
-                Button("Términos de Servicio") {
+                Button(isEnglish ? "Terms of Service" : "Términos de Servicio") {
                     showingTermsOfService = true
                 }
                 .sheet(isPresented: $showingTermsOfService) {
@@ -86,7 +120,7 @@ struct SettingsView: View {
             
             HStack {
                 Text("🔒")
-                Button("Declaración de Privacidad") {
+                Button(isEnglish ? "Privacy Policy" : "Declaración de Privacidad") {
                     showingPrivacyPolicy = true
                 }
                 .sheet(isPresented: $showingPrivacyPolicy) {
@@ -97,8 +131,8 @@ struct SettingsView: View {
             .padding(.bottom, 10)
             
             HStack {
-                Text("🏅") // Icono para Atribuciones
-                Button("Atribuciones") {
+                Text("🏅")
+                Button(isEnglish ? "Attributions" : "Atribuciones") {
                     showingAtribution = true
                 }
                 .sheet(isPresented: $showingAtribution) {
@@ -109,7 +143,7 @@ struct SettingsView: View {
             .padding(.bottom, 10)
         }
         .padding(.horizontal)
-        .navigationBarTitle("Configuración", displayMode: .inline)
+      //  .navigationTitle(isEnglish ? "Settings" : "Configuración", displayMode: .inline)
     }
     
     // Función para abrir Instagram
@@ -139,7 +173,7 @@ struct SettingsView: View {
     }
     
     private func sendEmail() {
-        guard let emailURL = createEmailUrl(to: "c137cardpy@gmail.com", subject: "Consulta", body: "Escribe aquí...") else { return }
+        guard let emailURL = createEmailUrl(to: "c137cardpy@gmail.com", subject: isEnglish ? "Inquiry" : "Consulta", body: isEnglish ? "Write here..." : "Escribe aquí...") else { return }
         if UIApplication.shared.canOpenURL(emailURL) {
             UIApplication.shared.open(emailURL)
         }
@@ -164,12 +198,3 @@ struct SettingsView: View {
         return defaultUrl
     }
 }
-
-/*
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
-
-*/

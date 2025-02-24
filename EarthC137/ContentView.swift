@@ -6,12 +6,14 @@ import UserNotifications
 
 struct ContentView: View {
    // @State private var interstitial: Interstitial?
+    
     @State private var selectedTab = 0
     @State private var isConnected = true
     @State private var showingTermsAlert = false
     @State private var showingTermsSheet = false // Nuevo estado para mostrar el Sheet
     @State private var showingInstruView = false // Nuevo estado para mostrar el modal de InstruView
-    
+    @AppStorage("isEnglish", store: UserDefaults(suiteName: "group.artemis.EarthC137.isEnglish"))
+    private var isEnglish: Bool = false
     //private let interstitialAdUnitID = "ca-app-pub-3940256099942544/4411468910"
     private let monitor = NWPathMonitor()
 
@@ -28,7 +30,7 @@ struct ContentView: View {
                         .foregroundColor(.gray)
                         .padding(.bottom, 16)
                     
-                    Text("Parece que estamos en la edad de piedra  🙃")
+                    Text(isEnglish ? "It seems we are in the stone age 🙃" :"Parece que estamos en la edad de piedra  🙃")
                         .font(.title)
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
@@ -51,13 +53,13 @@ struct ContentView: View {
                 TabView(selection: $selectedTab) {
                     ClockView()
                         .tabItem {
-                            Label("Reloj", systemImage: "watchface.applewatch.case")
+                            Label(isEnglish ? "Clock" :"Reloj", systemImage: "watchface.applewatch.case")
                         }
                         .tag(0)
 
                     CalendarView()
                         .tabItem {
-                            Label("Fecha", systemImage: "7.square.fill")
+                            Label(isEnglish ? "Date" :"Fecha", systemImage: "7.square.fill")
                         }
                         .tag(1)
 
@@ -69,7 +71,7 @@ struct ContentView: View {
 
                     SettingsView()
                         .tabItem {
-                            Label("Info", systemImage: "info.square.fill")
+                            Label(isEnglish ? "Settings" :"Ajustes", systemImage: "gear")
                         }
                         .tag(3)
                 }
@@ -89,16 +91,16 @@ struct ContentView: View {
         }
         .alert(isPresented: $showingTermsAlert) {
             Alert(
-                title: Text("Términos de Servicio"),
-                message: Text("Debes aceptar los términos de servicio para usar esta aplicación. ¿Quieres leer los términos?"),
-                primaryButton: .default(Text("Aceptar"), action: {
+                title: Text(isEnglish ? "Terms of Service" :"Términos de Servicio"),
+                message: Text(isEnglish ? "You must accept the terms of service to use this application. Do you want to read the terms?" :"Debes aceptar los términos de servicio para usar esta aplicación. ¿Quieres leer los términos?"),
+                primaryButton: .default(Text(isEnglish ? "Accept":"Aceptar"), action: {
                     // Guarda que el usuario ha aceptado los términos
                     UserDefaults.standard.set(true, forKey: "hasAcceptedTerms")
                     showingTermsAlert = false // Cierra la alerta
                     showingInstruView = true // Muestra el modal de InstruView
                 }),
                 
-                secondaryButton: .default(Text("Leer Términos"), action: {
+                secondaryButton: .default(Text(isEnglish ? "Read Terms":"Leer Términos"), action: {
                     showingTermsSheet = true // Muestra la hoja con los términos
                 })
             )
