@@ -36,23 +36,29 @@ struct Provider: TimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let imageName: String
+
 }
 
 // Vista que mostrará la imagen en el widget
 struct lock1EntryView: View {
     var entry: SimpleEntry
+    var deepLinkURL: URL {
+            URL(string: "EarthC137://tab/pins")! // Para la pestaña de Pins (tercera)
+        }
 
     var body: some View {
         if #available(iOSApplicationExtension 17.0, *) {
-            ZStack {
-                Image(entry.imageName)
-                    .resizable()
-                    .padding(-10.0)
-                    .scaledToFill() // Asegura que la imagen cubra todo el fondo
-                    .ignoresSafeArea() // Ignora las áreas seguras para cubrir completamente el widget
-                
+            Link(destination: deepLinkURL) {
+                ZStack {
+                    Image(entry.imageName)
+                        .resizable()
+                        .padding(-10.0)
+                        .scaledToFill() // Asegura que la imagen cubra todo el fondo
+                        .ignoresSafeArea() // Ignora las áreas seguras para cubrir completamente el widget
+                    
+                }
+                .containerBackground(for: .widget) { Color.clear }
             }
-            .containerBackground(for: .widget) { Color.clear }
         } else {
             VStack {
                    Text("Actualiza tu dispositivo")

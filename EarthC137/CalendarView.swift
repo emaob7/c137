@@ -26,9 +26,9 @@ struct CalendarView: View {
     
     private var isEnglish: Bool = false
     private let userDefaults = UserDefaults(suiteName: "group.artemis.EarthC137.Calendar")
-    private let images = ["new york","yellow name","barrilete cosmico","garra guarani","11 day","fire","hello","bad design","1902","1987","sky"]
-    private let interstitialAdUnitID = "ca-app-pub-4622872693950947/1407772472"
-    //private let interstitialAdUnitID = "ca-app-pub-3940256099942544/4411468910" //
+    private let images = ["holographic","new york","yellow name","barrilete cosmico","garra guarani","11 day","fire","hello","bad design","1902","1987","sky"]
+   // private let interstitialAdUnitID = "ca-app-pub-4622872693950947/1407772472"
+    private let interstitialAdUnitID = "ca-app-pub-3940256099942544/4411468910" //
     
     private let imageDescriptions: [String: String] = [:]
     

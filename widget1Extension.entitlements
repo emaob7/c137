@@ -5,6 +5,7 @@
 	<key>com.apple.security.application-groups</key>
 	<array>
 		<string>group.artemis.EarthC137.widget1</string>
+		<string>group.artemis.EarthC137.systemInfo</string>
 	</array>
 </dict>
 </plist>

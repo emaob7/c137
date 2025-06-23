@@ -4,6 +4,7 @@ import SwiftUI
 // Proveedor de datos para el widget
 struct Provider: TimelineProvider {
     private let userDefaults = UserDefaults(suiteName: "group.artemis.EarthC137.Calendar")
+   
 
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), imageName: "new york")
@@ -43,86 +44,94 @@ struct SimpleEntry: TimelineEntry {
 // Vista que mostrará la imagen en el widget
 struct CalendarWEntryView: View {
     var entry: SimpleEntry
+    var deepLinkURL: URL {
+           URL(string: "EarthC137://tab/date")! // Para la pestaña de Fecha (segunda)
+       }
 
     var body: some View {
         if #available(iOSApplicationExtension 17.0, *) {
-            ZStack {
-                Image(entry.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(-17.0)
-                    .scaledToFill() // Asegura que la imagen cubra todo el fondo
-                    .ignoresSafeArea() // Ignora las áreas seguras para cubrir completamente el widget
-                
-                
-                switch entry.imageName {
-                case "new york":
-                    newView(date: entry.date)
-                case "fire":
-                    CincelView(date: entry.date)
-                case "hello":
-                    helloView(date: entry.date)
-                case "chemistry":
-                    BadView(date: entry.date)
-                case "11 day":
-                    onceView(date: entry.date)
-                case "sky":
-                    skyView(date: entry.date)
-                case "yellow name":
-                    CallView(date: entry.date)
-                case "1987":
-                    barcaView(date: entry.date)
-                case "1902":
-                    MadridView(date: entry.date)
-                case "bad design":
-                    designView(date: entry.date)
-                case "barrilete cosmico":
-                    orangeView(date: entry.date)
-                case "garra guarani":
-                    AlbiView(date: entry.date)
-                default:
-                    EmptyView()
+            Link(destination: deepLinkURL) {
+                ZStack {
+                    Image(entry.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(-17.0)
+                        .scaledToFill() // Asegura que la imagen cubra todo el fondo
+                        .ignoresSafeArea() // Ignora las áreas seguras para cubrir completamente el widget
+                    
+                    switch entry.imageName {
+                    case "new york":
+                        newView(date: entry.date)
+                    case "fire":
+                        CincelView(date: entry.date)
+                    case "hello":
+                        helloView(date: entry.date)
+                    case "chemistry":
+                        BadView(date: entry.date)
+                    case "11 day":
+                        onceView(date: entry.date)
+                    case "sky":
+                        skyView(date: entry.date)
+                    case "yellow name":
+                        CallView(date: entry.date)
+                    case "1987":
+                        barcaView(date: entry.date)
+                    case "1902":
+                        MadridView(date: entry.date)
+                    case "bad design":
+                        designView(date: entry.date)
+                    case "barrilete cosmico":
+                        orangeView(date: entry.date)
+                    case "garra guarani":
+                        AlbiView(date: entry.date)
+                    case "holographic":
+                        holographic(date: entry.date)
+                    default:
+                        EmptyView()
+                    }
                 }
             }
             .containerBackground(for: .widget) { Color.black }
             .colorScheme(.dark) // Forzar el modo oscuro
             .widgetAccentable(false)
         } else {
-            ZStack {
-                Image(entry.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill) // Cambia a .fill
-                    .scaledToFill() // Asegura que la imagen cubra todo el fondo
-                    .ignoresSafeArea() // Ignora las áreas seguras para cubrir completamente el widget
-                
-                
-                switch entry.imageName {
-                case "new york":
-                    newView(date: entry.date)
-                case "fire":
-                    CincelView(date: entry.date)
-                case "hello":
-                    helloView(date: entry.date)
-                case "chemistry":
-                    BadView(date: entry.date)
-                case "11 day":
-                    onceView(date: entry.date)
-                case "sky":
-                    skyView(date: entry.date)
-                case "yellow name":
-                    CallView(date: entry.date)
-                case "1987":
-                    barcaView(date: entry.date)
-                case "1902":
-                    MadridView(date: entry.date)
-                case "bad design":
-                    designView(date: entry.date)
-                case "barrilete cosmico":
-                    orangeView(date: entry.date)
-                case "garra guarani":
-                    AlbiView(date: entry.date)
-                default:
-                    EmptyView()
+            Link(destination: deepLinkURL) {
+                ZStack {
+                    Image(entry.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill) // Cambia a .fill
+                        .scaledToFill() // Asegura que la imagen cubra todo el fondo
+                        .ignoresSafeArea() // Ignora las áreas seguras para cubrir completamente el widget
+                    
+                    
+                    switch entry.imageName {
+                    case "new york":
+                        newView(date: entry.date)
+                    case "fire":
+                        CincelView(date: entry.date)
+                    case "hello":
+                        helloView(date: entry.date)
+                    case "chemistry":
+                        BadView(date: entry.date)
+                    case "11 day":
+                        onceView(date: entry.date)
+                    case "sky":
+                        skyView(date: entry.date)
+                    case "yellow name":
+                        CallView(date: entry.date)
+                    case "1987":
+                        barcaView(date: entry.date)
+                    case "1902":
+                        MadridView(date: entry.date)
+                    case "bad design":
+                        designView(date: entry.date)
+                    case "barrilete cosmico":
+                        orangeView(date: entry.date)
+                    case "garra guarani":
+                        AlbiView(date: entry.date)
+                    default:
+                        EmptyView()
+                    }
                 }
             }
             
@@ -146,13 +155,7 @@ struct CalendarW: Widget {
     }
 }
 
-// Previsualización del widget
-struct CalendarW_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarWEntryView(entry: SimpleEntry(date: Date(), imageName: "new york"))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-    }
-}
+
 
 
 extension Date {

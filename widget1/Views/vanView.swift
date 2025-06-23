@@ -25,7 +25,7 @@ struct vanView: View {
                 .resizable()
                 .scaledToFill() // Ajusta la imagen para cubrir todo el fondo
                 .ignoresSafeArea() // Asegura que cubra todo el área, incluso debajo de las barras de estado y herramientas
-            
+             
             // Imagen degrada
             VStack {
                 HStack {

@@ -10,6 +10,7 @@
 		<string>group.artemis.EarthC137.Lock3</string>
 		<string>group.artemis.EarthC137.widget1</string>
 		<string>group.com.artemis.EarthC137.isEnglish</string>
+		<string>group.artemis.EarthC137.systemInfo</string>
 	</array>
 </dict>
 </plist>

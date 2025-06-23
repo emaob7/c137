@@ -23,12 +23,12 @@ struct ImageGridViewC: View {
 
     var body: some View {
         ScrollView {
-            Divider()
+         /*   Divider()
                 .frame(height: 1)
                 .background(Color.gris1)
                 .padding(.horizontal, 1)
                 .padding(.top, 3)
-
+*/
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                 ForEach(filteredImages(), id: \.self) { imageName in
                     ImageCellViewC(

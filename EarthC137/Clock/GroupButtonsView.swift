@@ -17,7 +17,7 @@ struct GroupButtonsView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Pins")
+                Text(isEnglish ? "Pins" :"Pines")
                     .foregroundColor(.white)
                     .font(.title2)
                     .fontWeight(.bold)

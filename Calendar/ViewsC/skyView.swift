@@ -49,7 +49,7 @@ struct skyView: View {
                     // Text("00:00 PM")
                     Text(date.day())
                         .foregroundColor(.white)
-                        .font(.system(size: 105))
+                        .font(.system(size: 100))
                         .fontWeight(.bold)
                        .fontDesign(.rounded)
                     /*
@@ -63,8 +63,8 @@ struct skyView: View {
             Image("cloud")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 90, height: 90)
-                .position(x: 108, y: 55)
+               // .frame(width: 90, height: 90)
+               // .position(x: 108, y: 55)
                 .scaledToFill()
                 .ignoresSafeArea()
              
@@ -75,8 +75,3 @@ struct skyView: View {
     }
 }
 
-struct skyView_Previews: PreviewProvider {
-    static var previews: some View {
-        skyView(date: Date())
-    }
-}

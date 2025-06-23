@@ -1,34 +1,50 @@
 import WidgetKit
 import SwiftUI
+import Intents
 
 // Proveedor de datos para el widget
 struct Provider: TimelineProvider {
     private let userDefaults = UserDefaults(suiteName: "group.artemis.EarthC137.widget1")
 
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), imageName: "command one")
-    }
+           SimpleEntry(
+               date: Date(),
+               imageName: "command one"
+           )
+       }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-          let entry = SimpleEntry(date: Date(), imageName: userDefaults?.string(forKey: "selectedImage") ?? "command one")
-          completion(entry)
-      }
+       
+        
+        let entry = SimpleEntry(
+            date: Date(),
+            imageName: userDefaults?.string(forKey: "selectedImage") ?? "command one"
+        )
+        completion(entry)
+    }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
+            let currentDate = Date()
             var entries: [SimpleEntry] = []
             
-            // Crea entradas para cada minuto
-            let currentDate = Date()
+      
+            let selectedImage = userDefaults?.string(forKey: "selectedImage") ?? "command one"
+
+            
+            // Crear entradas para los próximos 60 minutos (máximo permitido)
             for minuteOffset in 0..<60 {
                 let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
-                let entry = SimpleEntry(date: entryDate, imageName: userDefaults?.string(forKey: "selectedImage") ?? "command one")
+                let entry = SimpleEntry(
+                    date: entryDate,
+                    imageName: selectedImage
+                )
                 entries.append(entry)
             }
             
-            // Crea el timeline con las entradas y una política de actualización cada minuto
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }
+    
     }
 
 // Estructura de la entrada del timeline
@@ -40,16 +56,22 @@ struct SimpleEntry: TimelineEntry {
 // Vista que mostrará la imagen en el widget
 struct widget1EntryView: View {
     var entry: SimpleEntry
+    
 
     var body: some View {
         if #available(iOSApplicationExtension 17.0, *) {
             ZStack {
+                
+                
                 Image(entry.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(-17.0)
                     .scaledToFill() // Asegura que la imagen cubra todo el fondo
                     .ignoresSafeArea()
+                    .widgetAccentable(false)
+                    
+                    
                 
                 switch entry.imageName {
                 case "command one":
@@ -97,6 +119,8 @@ struct widget1EntryView: View {
                     bratView(date: entry.date)
                 case "cartoon console":
                     cartoonView(date: entry.date)
+                case "persistence":
+                    PersistenceView(date: entry.date, image: entry.imageName)
                     
                 default:
                     EmptyView()
@@ -104,8 +128,10 @@ struct widget1EntryView: View {
                      // También aplicar en el fondo del contenedor
                  
             }
+            
             .containerBackground(for: .widget) { Color.clear }
-            .widgetAccentable(false)
+            .widgetAccentable()
+            
         } else {
             ZStack {
                 Image(entry.imageName)
@@ -166,6 +192,7 @@ struct widget1EntryView: View {
                 }
             }
            }
+        
            
         }
         

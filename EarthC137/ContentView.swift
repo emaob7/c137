@@ -4,6 +4,7 @@ import WidgetKit
 import GoogleMobileAds
 import UserNotifications
 
+
 struct ContentView: View {
    // @State private var interstitial: Interstitial?
     
@@ -76,6 +77,9 @@ struct ContentView: View {
                         .tag(3)
                 }
                 .accentColor(.green)
+                .onOpenURL { url in
+                            handleDeepLink(url: url)
+                        }
               
             }
         }
@@ -88,6 +92,8 @@ struct ContentView: View {
             requestNotificationPermission() // Solicitar permiso para notificaciones
             UserDefaults.standard.set(true, forKey: "shouldShowUpdateNotification")
             checkForAppUpdate() // Verificar si hay una actualización
+          
+
         }
         .alert(isPresented: $showingTermsAlert) {
             Alert(
@@ -126,6 +132,12 @@ struct ContentView: View {
             }
         }
     }
+    
+    
+   
+
+
+    
 
     private func checkForAppUpdate() {
          let userDefaults = UserDefaults.standard
@@ -142,8 +154,8 @@ struct ContentView: View {
 
      private func sendUpdateNotification() {
          let content = UNMutableNotificationContent()
-         content.title = "¡Nueva Actualizacion!"
-         content.body = "Ahora puedes agregar hasta 3 pines a la pantalla de bloqueo."
+         content.title = "¡Nueva Actualizacion! 🧑🏻‍🚀"
+         content.body = "Prueba los nuevos Widgets y Pines "
          content.sound = .default
 
          // Configurar el trigger para que la notificación se muestre inmediatamente
@@ -181,6 +193,28 @@ struct ContentView: View {
             showingTermsAlert = true
         }
     }
+
+    
+    private func handleDeepLink(url: URL) {
+         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
+               components.scheme == "EarthC137",
+               components.host == "tab",
+               let tabIdentifier = components.path.split(separator: "/").last else {
+             return
+         }
+         
+         switch tabIdentifier {
+         case "date":
+             selectedTab = 1
+         case "pins":
+             selectedTab = 2
+         // Añade más casos según necesites
+         default:
+             selectedTab = 0
+         }
+     }
+ 
+    
 
     struct VisualEffectBlur: UIViewRepresentable {
            var blurStyle: UIBlurEffect.Style

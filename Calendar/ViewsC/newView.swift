@@ -39,8 +39,3 @@ struct newView: View {
     }
 }
 
-struct newView_Previews: PreviewProvider {
-    static var previews: some View {
-        newView(date: Date())
-    }
-}

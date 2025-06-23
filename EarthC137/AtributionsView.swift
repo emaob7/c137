@@ -36,9 +36,9 @@ struct AtributionsView: View {
                         
                         Text("3. Screenshoots para la Appstore")
                             .font(.headline)
-                        Text("Gracias a https://previewed.app")
+                        Text("Imagen de muhammad.abdullah en Freepik")
             
-                        Link("https://previewed.app/template/2A772EE0", destination: URL(string: "https://previewed.app/template/2A772EE0")!)
+                        Link("https://previewed.app/template/2A772EE0", destination: URL(string: "//www.freepik.es/foto-gratis/fondo-textura-holografica-gradiente_381361343.htm#fromView=search&page=1&position=5&uuid=4e078fb1-8bc4-4390-b027-f9b17030c3af&query=holographic+background")!)
                     }
                 }
                 .padding()
